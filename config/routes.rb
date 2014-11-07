@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :companies
+
+  resources :items
+
   resources :events
 
   devise_for :users

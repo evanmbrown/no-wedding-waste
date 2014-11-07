@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  location: MyText
+  is_charity: false
+  user_id: 1
+  company_type: MyText
+
+two:
+  name: MyText
+  description: MyText
+  location: MyText
+  is_charity: false
+  user_id: 1
+  company_type: MyText
