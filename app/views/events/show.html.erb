@@ -1,39 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>End Time</th>
+            <th>Location</th>
+            <th>Instructions</th>
+            <th>User</th>
+          </tr>
+        </thead>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+        <body>
+          <tr>
+            <td><%= @event.name %></td>
+            <td><%= @event.description %></td>
+            <td><%= @event.date %></td>
+            <td><%= @event.end %></td>
+            <td><%= @event.location %></td>
+            <td><%= @event.instructions %></td>
+            <td><%= @event.user_id %></td>
+          </tr>
+        </body>
+      </table>
 
-<p>
-  <strong>End:</strong>
-  <%= @event.end %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
+      <!-- <p>
+        <strong>Name:</strong>
+        <%= @event.name %>
+      </p>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @event.instructions %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @event.description %>
+      </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
-</p>
+      <p>
+        <strong>Date:</strong>
+        <%= @event.date %>
+      </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+      <p>
+        <strong>End:</strong>
+        <%= @event.end %>
+      </p>
+
+      <p>
+        <strong>Location:</strong>
+        <%= @event.location %>
+      </p>
+
+      <p>
+        <strong>Instructions:</strong>
+        <%= @event.instructions %>
+      </p>
+
+      <p>
+        <strong>User:</strong>
+        <%= @event.user_id %>
+      </p> -->
+
+      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%= link_to 'Back', events_path %>
+    </div>
+  </div>
+</div>
