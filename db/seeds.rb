@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+seed_list = ["Food - Meats", "Food - Vegetarian", "Food - Sweets", "Flowers", "Clothes", "Linens", "Other"]
+
+n = 1
+
+while n < seed_list.length
+
+	ItemCategory.create(name: seed_list[n-1])
+	n+=1
+
+end

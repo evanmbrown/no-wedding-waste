@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="container">
+		<div class="row"
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 			<div class="navbar-header">
       			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -34,14 +35,12 @@
 
     </div>
 
-	<div class="container">
+
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<%= render partial: "shared/flash_messages", flash: flash %>
 			</div>
 		</div>
-	</div>
-
 
 <%= yield %>
 
