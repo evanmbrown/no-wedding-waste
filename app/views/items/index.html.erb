@@ -22,15 +22,15 @@
           <% @items.each do |item| %>
             <tr>
               <td><%= item.name %></td>
-              <td><%= item.category_id %></td>
+              <td><%= item.item_category_id %></td>
               <td><%= item.description %></td>
               <td><%= item.quantity %></td>
-              <td><%= item.quantity_remaining %></td>
+              <td><%= item.quantity.to_i - item.quantity_requested.to_i %></td>
               <td><%= item.instructions %></td>
               <td><%= item.event_id %></td>
-              <td><%= link_to 'Show', item %></td>
-              <td><%= link_to 'Edit', edit_item_path(item) %></td>
-              <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Show', event_item_path(@event, item) %></td>
+              <td><%= link_to 'Edit', edit_event_item_path(@event, item) %></td>
+              <td><%= link_to 'Destroy', event_item_path(@event, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
@@ -38,7 +38,7 @@
 
       <br>
 
-      <%= link_to 'New Item', new_item_path %>
+      <%= link_to 'New Item', new_event_item_path %>
     
     </div>
   </div>

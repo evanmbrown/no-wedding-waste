@@ -8,7 +8,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    respond_with(@event)
+    @events = Event.all
+    @my_items = Item.find(params[:id])
+    respond_with(@event, @items)
   end
 
   def new
@@ -21,6 +23,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user_id = current_user.id
     @event.save
     respond_with(@event)
   end

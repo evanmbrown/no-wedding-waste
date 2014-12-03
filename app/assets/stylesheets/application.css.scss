@@ -3,6 +3,12 @@
 
 body, html {
 	height: 100%;
+	margin-bottom: 5px;
+}
+
+body {
+	background: linear-gradient(to bottom right, #34495e, #414D5E);
+	color: white;
 }
 
 .alert {
@@ -30,4 +36,21 @@ body, html {
 	margin-right: 0px;
 	padding-left: 0px;
 	padding-right: 0px;
+}
+
+.jumbotron {
+	color: black;
+}
+
+.footer {
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+}
+
+.item-detail {
+	border: 1px;
+	border-color: white;
+	border-style: dotted;
+	padding: 5px;
 }

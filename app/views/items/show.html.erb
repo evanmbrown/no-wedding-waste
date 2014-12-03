@@ -1,39 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
+      <div class="item-detail">
 
-<p>
-  <strong>Category:</strong>
-  <%= @item.category_id %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @item.name %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+      <p>
+        <strong>Category:</strong>
+        <%= @item.item_category_id %>
+      </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @item.quantity %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @item.description %>
+      </p>
 
-<p>
-  <strong>Quantity remaining:</strong>
-  <%= @item.quantity_remaining %>
-</p>
+      <p>
+        <strong>Quantity:</strong>
+        <%= @item.quantity %>
+      </p>
 
-<p>
-  <strong>Instructions:</strong>
-  <%= @item.instructions %>
-</p>
+      <p>
+        <strong>Quantity remaining:</strong>
+        <%= @item.quantity.to_i - @item.quantity_requested.to_i %>
+      </p>
 
-<p>
-  <strong>Event:</strong>
-  <%= @item.event_id %>
-</p>
+      <p>
+        <strong>Instructions:</strong>
+        <%= @item.instructions %>
+      </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+      <p>
+        <strong>Event:</strong>
+        <%= @item.event_id %>
+      </p>
+
+      <%= link_to 'Show', event_item_path(@event, @item) %> |
+      <%= link_to 'Back', event_items_path %>
+    </div>
+  </div>
+</div>
