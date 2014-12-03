@@ -8,9 +8,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @events = Event.all
-    @my_items = Item.find(params[:id])
-    respond_with(@event, @items)
+    @event = Event.find(params[:id])
+    @my_items = Item.where("event_id = ?", @event.id)
+    respond_with(@event, @my_items)
   end
 
   def new
