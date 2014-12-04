@@ -1,10 +1,23 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-0">
-
+		<div class="col-md-8 col-md-offset-0">
+			<h2>What is No Wedding Waste?</h2>
 			No Wedding Waste wants to help you help someone else at the end of your special day. But you've been working hard!
 			So let's make giving away your leftover food, flowers and more much easier than getting them.
 
+			<h3>If you're holding an event</h3>
+			And you think you'll have leftovers that you'd like to donate to a worth organization - sign up now, list your event,
+			and the items you'll have available!
+
+			<h3>If you're an organization who could use some free stuff</h3>
+			Sign up now, indicate that you are looking for some items, and search away!
+
 		</div>
 	</div>
+</br>
+	<% if user_signed_in? == true %>	
+				  	<p><a class="btn btn-primary btn-lg" href="../events" role="button">Get Started!</a></p>
+				  <% else %>	
+				  	<p><a class="btn btn-primary btn-lg" href="../users/sign_up" role="button">Sign up now!</a></p>
+  	  	<% end %>
 </div>

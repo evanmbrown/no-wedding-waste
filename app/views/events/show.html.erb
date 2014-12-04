@@ -3,11 +3,10 @@
     <div class="col-md-10 col-md-offset-1">
 
       <p id="notice"><%= notice %></p>
+      
+      <h1><%= @event.name %></h1>
       <div class="item-detail">
-         <p>
-          <strong><%= @event.name %></strong>
-        </p>
-
+         
          <p>
           <strong>Description:</strong>
           <%= @event.description %>
@@ -66,7 +65,8 @@
         </body>
       </table>
 <% end %>
-
+      </br>
+      <h2>Items available at <%= @event.name %></h2>
       <table class="table">
         <thead>
           <tr>
@@ -76,7 +76,6 @@
             <th>Quantity</th>
             <th>Quantity remaining</th>
             <th>Instructions</th>
-            <th>Event</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -90,14 +89,14 @@
               <td><%= item.quantity %></td>
               <td><%= item.quantity.to_i - item.quantity_requested.to_i %></td>
               <td><%= item.instructions %></td>
-              <td><%= item.event_id %></td>
-              <td><%= link_to 'Show', event_item_path(@event, item) %></td>
+              <td><%= link_to 'View Details', event_item_path(@event, item) %></td>
               <td><%= link_to 'Edit', edit_event_item_path(@event, item) %></td>
-              <td><%= link_to 'Destroy', event_item_path(@event, item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+
+      <p><%= link_to 'New Item', new_event_item_path(@event) %></p>
 
       <%= link_to 'Edit', edit_event_path(@event) %> |
       <%= link_to 'Back', events_path %>

@@ -40,9 +40,35 @@
         <strong>Event:</strong>
         <%= @item.event_id %>
       </p>
+      </div>
+
+      <h3>Claim some of these now!</h3>
+      <%= form_for([@event, @item]) do |f| %>
+        <% if @item.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+            <ul>
+            <% @item.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :quantity_requested %><br>
+          <%= f.number_field :quantity_requested, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </br>
 
       <%= link_to 'Show', event_item_path(@event, @item) %> |
       <%= link_to 'Back', event_items_path %>
-    </div>
+    
   </div>
 </div>
