@@ -34,7 +34,7 @@ gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
 
 # Heroku stuff
-gem 'pg', '= 0.17.1', group: :production
+gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
