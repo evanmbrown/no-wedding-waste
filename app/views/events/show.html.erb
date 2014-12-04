@@ -3,7 +3,43 @@
     <div class="col-md-10 col-md-offset-1">
 
       <p id="notice"><%= notice %></p>
+      <div class="item-detail">
+         <p>
+          <strong><%= @event.name %></strong>
+        </p>
 
+         <p>
+          <strong>Description:</strong>
+          <%= @event.description %>
+        </p>
+
+         <p>
+          <strong>Date:</strong>
+          <%= @event.date %>
+        </p>
+
+         <p>
+          <strong>End Time:</strong>
+          <%= @event.end %>
+        </p>
+
+         <p>
+          <strong>Location:</strong>
+          <%= @event.location %>
+        </p>
+
+         <p>
+          <strong>Special Instructions:</strong>
+          <%= @event.instructions %>
+        </p>
+
+        <p>
+          <strong># Items Available:</strong>
+          <%= @event.items.count %>
+        </p>
+      </div>
+
+<% if false %>      
       <table class="table">
         <thead>
           <tr>
@@ -29,7 +65,7 @@
           </tr>
         </body>
       </table>
-
+<% end %>
 
       <table class="table">
         <thead>
