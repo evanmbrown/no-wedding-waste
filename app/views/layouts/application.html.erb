@@ -27,7 +27,12 @@
 		      	</ul>
 	      	<% else %>
 		      	<ul class="nav navbar-nav navbar-right">
+		        	<li class="header-text">Welcome <%= current_user.email %></li>
+		        	<% if @user.organization == true %>
+		        	<li><%= link_to "All Events", events_path %></li>
+		        	<% else %>
 		        	<li><%= link_to "My Events", events_path %></li>
+		        	<% end %>
 		        	<li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
 		      	</ul>
 	      	<% end %>

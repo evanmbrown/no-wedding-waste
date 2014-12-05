@@ -10,20 +10,24 @@ class EventsController < ApplicationController
   end
 
   def show
+    @user = User.find(current_user)
     @event = Event.find(params[:id])
     @my_items = Item.where("event_id = ?", @event.id)
     respond_with(@event, @my_items)
   end
 
   def new
+    @user = User.find(current_user)
     @event = Event.new
     respond_with(@event)
   end
 
   def edit
+    @user = User.find(current_user)
   end
 
   def create
+    @user = User.find(current_user)
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     @event.save
@@ -31,11 +35,13 @@ class EventsController < ApplicationController
   end
 
   def update
+    @user = User.find(current_user)
     @event.update(event_params)
     respond_with(@event)
   end
 
   def destroy
+    @user = User.find(current_user)
     @event.destroy
     respond_with(@event)
   end
